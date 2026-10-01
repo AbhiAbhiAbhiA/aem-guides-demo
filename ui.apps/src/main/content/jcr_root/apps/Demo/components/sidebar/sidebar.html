@@ -1,0 +1,43 @@
+
+<div data-sly-use.headerModel="com.adobe.aem.guides.demo.core.models.Header">
+<h2> This is task3<h2>
+    <h1>Header</h1>
+    <p>Logo Path: ${headerModel.logoPath}</p>
+    <p>Logo Mobile Image: ${headerModel.logoMobileImage}</p>
+    <p>Logo Link: ${headerModel.logoLink}</p>
+    <p>Status: ${headerModel.enableSwitch ? "CheckboxON" : "checkboxOFF"}</p>
+
+    <!-- Header Links -->
+    <div>
+        <h2>Header Links</h2>
+        <sly data-sly-list.headerLink="${headerModel.headerLinks}">
+            <div>
+                <p>Name: ${headerLink.name}</p>
+                <p>Image: ${headerLink.image}</p>
+
+                <!-- Sidebar Navigation -->
+                <div>
+                    <h3>Sidebar Navigation</h3>
+                    <sly data-sly-list.sidebarNav="${headerModel.sidebarNavigation}">
+                        <div>
+                            <p>Desktop Icon: ${sidebarNav.desktopIcon}</p>
+                            <p>Mobile Icon: ${sidebarNav.mobileIcon}</p>
+                            <ul>
+                                <!-- Nested Links -->
+                                <sly data-sly-list.nestedLink="${sidebarNav.nested}">
+                                    <li>Navigation URL: ${nestedLink.navigationUrl}</li>
+                                </sly>
+                            </ul>
+                        </div>
+                    </sly>
+                </div>
+            </div>
+        </sly>
+    </div>
+
+    <!-- Region -->
+    <div data-sly-use.regionModel="com.adobe.aem.guides.demo.core.models.Region">
+      <h3>Region</h3>
+        <p>Country: ${regionModel.country}</p>
+    </div>
+</div>

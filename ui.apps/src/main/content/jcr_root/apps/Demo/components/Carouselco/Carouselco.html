@@ -1,0 +1,14 @@
+<h1>this is task2</h1>
+
+<div data-sly-use.car="com.adobe.aem.guides.demo.core.models.Caro">
+
+  <div data-sly-list.para="${car.multifield}">
+    <p>Additional Text: ${para.additionaltext}</p>
+    <p>Path Field: ${para.pathfield}</p>
+
+    <div data-sly-list.pa="${para.nestedmultifield}">
+      <p>Nested Text: ${pa.text}</p>
+    </div>
+  </div>
+
+</div>

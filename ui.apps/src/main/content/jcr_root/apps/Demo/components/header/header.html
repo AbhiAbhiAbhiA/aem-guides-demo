@@ -1,0 +1,13 @@
+<h1>This is a task1</h1>
+<div data-sly-use.model="com.adobe.aem.guides.demo.core.models.Details">
+
+<div>textfield:${model.textfield}</div>
+<div>pathfield:${model.pathfield}</div>
+<div>checkbox:${model.checkbox}</div>
+
+<sly data-sly-list.surge="${model.detailChild}">
+<div>textfield:${surge.text}</div>
+<div>datepicker:${surge.datepicker}</div>
+</sly>
+
+</div>
